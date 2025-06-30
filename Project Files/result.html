@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding-top: 60px;
+        }
+        .result-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333333;
+        }
+        .prediction {
+            font-size: 22px;
+            margin-bottom: 50px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .risk {
+            background-color: #ffe0e0;
+            color: #c0392b;
+            border: 1px solid #e74c3c;
+        }
+        .safe {
+            background-color: #e0ffe0;
+            color: #2e8b57;
+            border: 1px solid #2ecc71;
+        }
+        .home-btn {
+            margin-top: 70px;
+            padding: 10px 25px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .home-btn:hover {
+            background-color: #2c80b4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-container">
+        <h1>Liver Disease Prediction Result</h1>
+        {% if prediction_text == "1" %}
+            <div class="prediction risk">
+                You may be at risk of liver disease. Please consult a doctor.
+            </div>
+        {% else %}
+            <div class="prediction safe">
+                No signs of liver disease detected. No worries!
+            </div>
+        {% endif %}
+        <a class="home-btn" href="/">Back to Home</a>
+    </div>
+
+</body>
+</html>
